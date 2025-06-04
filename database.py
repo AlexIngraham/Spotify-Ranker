@@ -8,7 +8,6 @@ try:
     cursor.execute(query)
     result = cursor.fetchall()
     print('SQLite Version is {}'.format(result))
-    cursor.close()
     print("SQLite connection opened successfully")
     # Create a table
     create_table_query = '''
@@ -25,10 +24,12 @@ try:
     '''
     cursor.execute(create_table_query)
     con.commit()
+    cursor.close()
 
 
 except sqlite3.Error as error:
     print("Error: ", error)
+
 
 finally:
     if con:
