@@ -81,6 +81,7 @@ load_csv(csv_file, db_file)
 get_top_artist(cursor)
 get_top_tracks(cursor)
 get_top_albums(cursor)
+most_played_days(cursor)
 
 print("Top Artists: :", get_top_artist(cursor))
 print("\n")
